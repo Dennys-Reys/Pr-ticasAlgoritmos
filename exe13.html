@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>Escolha uma tabuada, de 2 a 9:</b><br>
+    <select name="" id="sel_ect">
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option> 
+    </select> <br>
+    <b>Até que número:</b><br>
+    <input type="text" id="in_put"><br>
+    <button onclick="calcular()">Ver tabuada</button>
+    <div id="msg"></div>
+    
+    
+</body>
+</html>
+<script>
+    function calcular(){
+         var tabu = Number(sel_ect.value)
+         var qnt = Number(in_put.value)
+         var contar = 0;
+
+         while( contar < qnt){
+            contar++
+            if(contar%2 ==0){ 
+                msg.innerHTML += `<span style="color:blue;">${tabu}X${contar} = ${tabu*contar}</span><br>`
+            }else{
+                msg.innerHTML += `<span style="color:red">${tabu}X${contar} = ${tabu*contar}</span><br>`
+            }
+           
+
+
+         }
+    }
+</script>

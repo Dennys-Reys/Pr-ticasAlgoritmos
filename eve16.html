@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>O elefante incomoda muita gente</h1><br>
+    <input type="text" id="in_put" placeholder="Quantos elefantes?"><br>
+    <button onclick="incomodar()">Atazanar médium</button><br>
+    <div id="msg"></div>
+
+</body>
+</html>
+<script>
+    function incomodar(){
+        var quanto = Number(in_put.value)
+        var contar = 1
+        msg.innerHTML += ""
+        
+
+        while (contar < quanto){
+            contar++
+            msg.innerHTML += `1 elefante incomoda muita gente! <br>`
+            msg.innerHTML += `${contar}  elefantes`
+
+            var contar2 = 0
+            while( contar2 < contar){
+                msg.innerHTML += ` incomodam,`
+                contar2++
+            }
+            msg.innerHTML += ` muito mais !<br>`
+
+        }
+        
+    }
+</script>

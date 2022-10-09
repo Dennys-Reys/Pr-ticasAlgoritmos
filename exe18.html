@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas pessoas irão de carona?<br>
+    <input type="text" id="in_put" placeholder="Quantidade"><br>
+    O carro suporta quantos passageiros?<br>
+    <input type="text" id="in_put2" placeholder="Capacidade"> <br>
+    <button onclick="carona()">Partiu carona</button><br>
+    <div id="msg"></div>
+    
+</body>
+</html>
+<script>
+    function carona (){
+        var contar = 1
+        var pass = Number(in_put.value)
+        var qnt = Number(in_put2.value)
+
+        msg.innerHTML = ""
+        
+
+        while (contar <= pass){
+            if(contar == 1 ){
+                msg.innerHTML += `Entrou o ${contar}º passageiro (que é o (a) motorista)...<br >`
+            }else if(contar <= qnt){
+                msg.innerHTML += `Entrou o ${contar}º passageiro <br>`
+                
+            }
+            else if (pass >= qnt){
+                msg.innerHTML += `Entrou o ${contar}º passageiro terá que esperar <br>`
+            }
+            contar++ 
+            
+            
+        }
+        
+    }
+</script>

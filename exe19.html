@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vamos para a SPTECH !!</h1> <br>
+    <b>Quantos ônibus você pega?</b> <br>
+    <input type="text" id="in_put" placeholder="ônibus"><br>
+    <b>Quantos trem você pega?</b> <br>
+    <input type="text" id="in_put2" placeholder="Trem"><br>
+    <b>Quantos metrô você pega?</b> <br>
+    <input type="text" id="in_put3" placeholder="Metrô"><br>
+    <button onclick="verificar()">#Partiu Trajeto</button> <br>
+    <div id="msg"></div>
+
+</body>
+</html>
+<script>
+    function verificar(){
+        contar = 0
+        var bus = Number(in_put.value)
+        var train = Number (in_put2.value)
+        var subway = Number(in_put3.value)
+        
+        
+        while (contar < bus){
+           
+            contar++
+            msg.innerHTML += `<span style="color:red;"> Pegando o ${contar}º buzão</span><br>`
+            
+
+        }
+        contar = 0
+        while (contar <= train){
+        
+            contar++
+            msg.innerHTML += `<span style="color:green;"> Pegando o ${contar}º trem</span><br>`
+            
+        }
+        contar = 0
+        while (contar <= subway){
+        
+            contar++
+            msg.innerHTML += `<span style="color:blue;"> Pegando o ${contar}º buzão</span><br>`
+           
+        }
+        
+        
+    }
+
+    
+</script>
