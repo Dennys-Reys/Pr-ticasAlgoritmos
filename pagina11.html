@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toFixed()</title>
+  </head>
+  <body>
+    Número com casas decimais: <input type="text" id="ipt_numero" /><br />
+    <button onclick="decimais()">Exibir decimais</button>
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+
+<script>
+  function decimais() {
+    var numero = Number(ipt_numero.value); // pegando variável de número
+
+    // toFixed() é uma função nativa do JavaScript que serve para exibir o total de casas decimais de um número 
+    // o resultado do toFixed() sempre será um TEXTO, então ao manipulá-lo, tome cuidado para os cálculos não serem CONCATENADOS!
+
+    // ao usar o toFixed() em variáveis, podemos simplesmente chamar a "variavel.toFixed(X)" que funcionará normalmente
+    
+    div_mensagem.innerHTML += `<br><br>O número é: ${numero.toFixed(2)}`; // fixo com 2 casas decimais aplicadas em variável
+    div_mensagem.innerHTML += `<br>O número é: ${numero.toFixed(5)}`; // fixo com 5 casas decimais aplicadas em variável
+    div_mensagem.innerHTML += `<br>O número é: ${numero.toFixed(0)}`; // fixo com nenhuma casa decimal aplicadas em variável
+    div_mensagem.innerHTML += `<br>Exemplo de número fixo: ${(10 + 5.66666).toFixed(3)}`; // fixo com 3 casas decimais aplicadas em cálculo
+    
+    // ao usar o toFixed() para realizar cálculos, devemos englobar o cálculo entre parenteses e depois aplicar o toFixed() no resultado do cálculo
+  
+    div_mensagem.innerHTML += `<br>Exemplo de concatenação: ${(10 + 5).toFixed(4) + 555}` 
+    // o toFixed() transforma o resultado em texto, então ao somar com 555 ele concatenará
+    
+    div_mensagem.innerHTML += `<br>Exemplo de cálculo: ${Number((10 + 5).toFixed(4)) + 555}` 
+    // o toFixed() transforma o resultado em texto, então se transformarmos seu resultado em número, ao somar com 555 ele irá realmente somar 
+
+  }
+</script>

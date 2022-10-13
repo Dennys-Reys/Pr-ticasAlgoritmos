@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual foi a última série que você assistiu? <br>
+    <input type="text" id="in_put"> <br>
+    Qual o total de epsódios você assistiu ? <br>
+    <input type="text" id="in_put2"> <br>
+    <button onclick="verificar()">Verificar nivél</button>
+    <div id="msg"></div>
+    
+</body>
+</html>
+<script>
+    function verificar (){
+        var serie = in_put.value
+        var vezes = Number(in_put2.value)
+        vezes = vezes * 22
+
+        if(vezes < 100){
+            msg.innerHTML = `Vejo que você gosta dessa série ${serie}`
+            
+        } 
+        else {
+            msg.innerHTML += `Uau, você realmente gosta de ${serie} !`
+        }
+
+
+    }
+</script>

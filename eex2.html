@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  Quantas latinhas de refri você toma por dia? <br>
+  <input type="text" id="in_put">  <br>
+  <button onclick="clique()" >Quantos refris?</button> <br>
+  <div id="msg"></div>
+
+</body>
+</html>
+<script>
+    function clique(){
+        var latinhas = Number(in_put.value)
+        latinhas = latinhas * 365
+
+        if (latinhas < 500){
+            msg.innerHTML = `Você tomou ${latinhas} esse ano`
+
+        }else {
+            msg.innerHTML = ` ${latinhas} Cuidado com a diabetes!`
+        }
+    }
+</script>

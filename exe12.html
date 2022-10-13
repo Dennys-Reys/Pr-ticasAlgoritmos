@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>Quantas voltas o carro dará na corrida?</b><br>
+    <input placeholder="Quanidade" type="text" id="in_put"><br>
+    <button onclick="contar()">Iniciar corrida!</button>
+    <div id="msg"></div>
+    
+</body>
+</html>
+<script>
+    function contar (){
+        var voltas = Number(in_put.value)
+        var contar = 1
+     
+        while (contar <= voltas ){
+            msg.innerHTML += ` Carro dando a ${contar}ª  volta! <br>`
+            contar++
+        }
+        if (contar = voltas ){
+            msg.innerHTML += "Corrida Finalizada"
+        }
+    }
+</script>

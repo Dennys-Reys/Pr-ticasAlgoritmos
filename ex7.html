@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 7</title>
+</head>
+<body>
+    <h1>Calculadora de cansaço do aluno SPTech</h1> <br><br>
+<b>Meio de transporte</b> <br>
+<select id="sel_ect">
+    <option value="v">ônibus</option>
+    <option value="uc">Metrô</option>
+    <option value="c">Carro</option>
+    <option value="b">Bicicleta</option>
+    <option value="vc">lotção</option>
+    <br><br>
+    </select>
+    <button onclick="verifica()">Calcular cansaço</button><br>
+    
+</body>
+</html>
+<script>
+    function verifica (){
+        var seleta = sel_ect.value;
+
+        if (seleta == "c" || seleta == "b"){
+            alert("Tá tranquilo ...")
+        }else if (seleta == "vc" || seleta == "v") {
+            alert("Um pouco cansado")
+        }else {
+            alert("Vish ... vive cansado.")
+        }
+    }
+</script>

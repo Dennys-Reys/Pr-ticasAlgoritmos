@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sorvetinho!</h2>
+    Sabor: 
+    <select id="sel_sabor" onchange="verificar()">
+        <option value="c">Chocolate</option>
+        <option value="c">Morango</option>
+        <option value="nc">Jiló</option>
+        <option value="nc">Feijão</option>
+        <option value="nc">Queijo</option>
+        <option value="nf">Pneu</option>
+    </select>
+</body>
+</html>
+
+<script>
+    function verificar() {
+        var sabor = sel_sabor.value;
+
+        /*
+            Diferente da pagina17.html, onde o usuário poderia inserir qualquer valor, aqui utilizamos uma lista suspensa (select/combo);
+            Utilizando a select, conseguimos limitar os valores que o usuário poderá inserir;
+            Desse modo, não precisamos validar se é "jiló", "jilo" ou "JILÓ", pois só haverá uma entrada única para a opção "Jiló"
+        */
+
+        if (sabor == "nf" || sabor == "nc") { // se a opção selecionada for "nf" ou "nc", ele entrará no if
+            alert('Eu não como este sabor! :C')
+        } else {
+            alert('Eu como desse sabor! :)');
+        }
+        
+    }   
+</script>

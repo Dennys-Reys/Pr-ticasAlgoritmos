@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 4 - Correção</title>
+  </head>
+  <body>
+    <h1>4Migas</h1>
+    Valor por grama: <br>
+    <input id="ipt_valor" /><br />
+    Peso do sorvete (em gramas): <br>
+     <input id="ipt_peso" /><br /> 
+    Cobertura: <br>
+    <input id="ipt_cobertura" /><br /> 
+    Tipo de sorvete: <br>
+    <input id="ipt_tipo" /><br />
+    <button onclick="calcular()">Calcular</button>
+    <div id="div_resultado"></div>
+  </body>
+</html>
+
+<script>
+  function calcular() {
+    var valorPorGrama = Number(ipt_valor.value);
+    var peso = Number(ipt_peso.value);
+    var cobertura = ipt_cobertura.value;
+    var tipo = ipt_tipo.value;
+
+    if (cobertura != "C") {
+      valorPorGrama = valorPorGrama + 0.01;
+    } 
+
+    if (tipo == "G") {
+      valorPorGrama = valorPorGrama * 1.11;
+    } else {
+      valorPorGrama = valorPorGrama * 0.9;
+    }
+
+    var valorFinal = valorPorGrama * peso;
+
+    if (valorFinal > 10) {
+      div_resultado.innerHTML = `<span style="color: green">Esse sorvete vai comprometer a mesada!</span>`
+    } else {
+      div_resultado.innerHTML = `<span style="color: blue">Você está maneirando...</span>`
+    }
+
+  }
+</script>

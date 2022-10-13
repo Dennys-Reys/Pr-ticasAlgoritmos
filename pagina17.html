@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sorvetinho!</h2>
+    Sabor: <br>
+     <input type="text" id="ipt_sabor"> <br>
+    <button onclick="verificar()">Verificar se eu como</button>
+</body>
+</html>
+
+<script>
+
+    function verificar() {
+        var sabor = ipt_sabor.value;
+
+        /*
+            O operador || (OU) serve para vincular duas expressões, assim como o &&;
+                - expressaoA || expressaoB
+            No operador ||, precisamos que apenas 1 das expressões sejam verdadeiras para que a saída/resultado seja verdadeiro;
+            Exemplo: "Para ir ao shopping, preciso 100 reais em dinheiro ou um cartão de crédito" -> se alguma das condições forem atingidas, vou ao shopping;
+        */
+        if (sabor == "jiló" || sabor == "feijão" || sabor == "queijo") {
+            alert("Eu não como este sabor! :C");
+        } else {
+            alert("Eu como desse sabor! :)");
+        }
+        /*
+            Nesse contexto, estamos validando se o sabor é "jiló" ou "feijão" ou "queijo", onde: 
+            - Se for qualquer um desses três valores, exibe que "Eu não como este sabor! :C";
+            - Se for um sabor DIFERENTE de todos esses (ou seja, senão der TRUE em nenhuma das validações do IF), exibe que "Eu como desse sabor! :)";
+
+            Nesse caso, teríamos um possível problema somente com a sintaxe do valor inserido pelo usuário;
+            Se o usuário inserir "feijao" ou "jilo" sem acentuação, por exemplo, poderia quebrar a validação;
+            Como eu estamos validando se o sabor é "jiló" ou "feijão", se o valor não estiver acentuado, a validação irá falhar (resultará em FALSE);
+            Nesse sentido, eu precisaria adicionar cada um desses possíveis cenários específicos na validação, como:
+
+            if (sabor == "jiló" || sabor == "jilo" || sabor == "JILÓ" || sabor == "feijão" || sabor == "feijao" ... )
+
+        */
+    }
+
+</script>

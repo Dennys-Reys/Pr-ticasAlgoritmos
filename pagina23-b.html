@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de Repetição</title>
+</head>
+<body>
+    
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+// criando variável quando a página carregar
+var contador = 0;
+    
+    while (contador < 10) { 
+        div_mensagem.innerHTML += "Você deu um passo! <br>";
+        contador++;
+    }
+/*
+    O while é uma estrutura de REPETIÇÃO, onde temos um funcionamento parecido com o do "if"
+    A grande diferença é que após o bloco terminar de ser executqado, o teste no while é feito NOVAMENTE.
+    Esse teste, chamado de Condição de Repetição, se for verdadeiro, executa o bloco novamente
+    Por isso, devemos alterar o valor do CONTADOR, senão a Condição de Repetição sempre será VERDADEIRA
+*/
+
+</script>

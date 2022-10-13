@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe seu nome: <br>
+    <input type="text" id="in_put"> <br>
+    Qual modelo de carro você deseja comprar? <br>
+    <input type="text" id="in_put2"> <br>
+    Qual o valor do carro ? <br>
+    <input type="text" id="in_put3"> <br>
+    Informe o cupom de desconto: <br>
+    <input type="text" id="in_put4"> <br>
+    <button onclick="clique()" >efetuar compra</button>
+    <div id="msg"></div>
+
+
+
+</body>
+</html>
+<script>
+    function clique(){
+        var nome = in_put.value
+        var modelo = in_put2.value
+        var valor = Number(in_put3.value)
+        var cupom = in_put4.value
+        var desconto = valor -  valor * 0.11
+
+        if(modelo == ""){
+            alert("Informe o modelo do carro para prosseguir com a compra!")
+            msg.innerHTML =""
+        }
+        if (valor < 5000){
+            alert("Valor inválido! O carro está barato demais")
+            msg.innerHTML =""
+        }   
+        if(cupom == "CARRO_NOVO"){
+            alert("Cupom válido! Desconto de 11% aplicado!")
+            msg.innerHTML += `<i><font color="green"> ${nome}! O carro de modelo ${modelo}, de valor padrão R$${valor}, sairá por R${desconto}</font color><i>`
+        }
+           
+        
+        else {
+            alert("Cupom inválido! Desconto não será aplicado!")
+            msg.innerHTML = `<b><font color="red">${nome}! O carro de modelo ${modelo}, de valor padrão R$${valor}<b></font color>`
+        }
+
+
+    }
+</script>

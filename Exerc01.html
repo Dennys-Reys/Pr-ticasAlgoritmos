@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wen Rac</title>
+</head>
+<body>
+    <h1>Wen Rac</h1>
+
+    Informar nome <br>
+    <input type="text" id="in_nome"> <br>
+    Informar modelo desejado <br>
+    <input type="text" id="in_modelo"> <br>
+    Informar valor <br>
+    <input type="text" id="in_valor"> <br>
+    Informar cupom <br>
+    <input type="text" id="in_cupom"> <br><br>   
+    <button onclick="comprar()">Efetuar compra</button><br>
+    <div id="div_comp"></div>
+</body>
+</html>
+<script> 
+    function comprar() {
+        var valorCar = Number (in_valor.value);
+        var valoCupom =  in_cupom.value;
+        var descont = valorCar - valorCar * 0.11;
+        var modelo = in_modelo.value
+        var nome = in_nome.value
+
+        if (modelo == "") {
+
+        alert ('Informe o modelo do carro para prosseguir com a compra!')
+        }
+        if (valorCar < 5000) {
+
+            alert ('Valor inválido! O carro está barato demais')
+        }
+        if (valoCupom == 'CARRO_NOVO') {
+
+        alert ('Cupom válido! Desconto de 11% aplicado!')
+
+        div_comp.innerHTML = `<i><font color="green"> ${nome}! O carro de modelo ${modelo}, de valor padrão R$${valorCar}, sairá por R${descont}</font color><i>`
+    }
+
+      else {
+        alert ('Cupom inválido! Desconto não será aplicado!')
+
+
+    div_comp.innerHTML = `<b><font color="red">${nome}! O carro de modelo ${modelo}, de valor padrão R$${valorCar}<b></font color>`
+}
+        
+
+        }
+      
+</script>
