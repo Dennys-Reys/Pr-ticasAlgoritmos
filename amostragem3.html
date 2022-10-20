@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o limite máximo da amostragem: <br>
+    <input type="text" id="in_put" placeholder="limite max."> <br>
+    Informe o limite máximo da amostragem: <br>
+    <input type="text" id="in_put2" placeholder="limite min."> <br>
+    Informe teste de divisibilidade: <br>
+    <input type="text" id="in_put3" placeholder="Teste"> <br>
+    <button onclick="contar()">Contar</button> <br>
+    <div id="msg"></div>
+
+    
+</body>
+</html>
+<script>
+    function contar(){
+        var limiteMax = Number(in_put.value);
+        var limiteMin = Number(in_put2.value);
+        var teste = Number(in_put3.value);
+        if (limiteMin < 1){
+            alert("O limite precisa ser maior que 1")
+        }
+        else if(limiteMax >100 ){
+            alert("O limite precisa ser menor que 100")
+        }
+        else if(teste < 3 && teste >10){
+            alert("O número precisa estar entre 3 e 10")
+
+        }
+        else { 
+            msg.innerHTML = ''
+            for(var contador = limiteMin;contador < limiteMax;contador++){
+                if(contador % teste ==0){
+                msg.innerHTML += `${contador} <br>`
+                }
+            
+        }
+    }
+       
+    }
+</script>
+</body>
+</html>
