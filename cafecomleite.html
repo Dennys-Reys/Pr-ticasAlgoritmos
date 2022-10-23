@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+   
+    
+</head>
+<body>
+    <h2>Quantas xicaras de café você bebeu na vida?</h2>
+    Informar quantidade: <br>
+    <input type="text" id="in_put" placeholder="Quantidade"> <br>
+    <button onclick="verificar()">Ver a quantidade</button> <br>
+    <div id="msg"></div>
+    
+</body>
+</html>
+<script>
+    function verificar(){
+        msg.innerHTML= ' '
+        var leite = `<img src="https://www.acasaencantada.com.br/wp-content/uploads/2020/05/como-conservar-leite-em-po-03-530x794.jpg" alt="colher de leite" height="200px">` ;
+        var cafe = `<img src="https://lh6.googleusercontent.com/-hXOuZIojIfw/UQGXwLSUYHI/AAAAAAAARWU/ElGoeNYjfQA/s640/blogger-image--1751233207.jpg" alt="colher de cafe" height="200px">`
+        var xicara = Number(in_put.value);
+
+        for(var contador= 0;contador < xicara; contador++){
+            msg.innerHTML += `${leite + leite} <br> ${cafe } <br> `
+        }
+    }
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Qual seu número da sorte?</h2>
+    Informe seu 1º numero da sorte: <br>
+    <input type="text" id="in_put" placeholder="Informe aqui"> <br>
+    Informe seu 2º numero da sorte: <br>
+    <input type="text" id="in_put2" placeholder="Informe aqui"> <br>
+    Informe seu 3º numero da sorte: <br>
+    <input type="text" id="in_put3" placeholder="Informe aqui"> <br>
+    Informe seu nome: <br>
+    <input type="text" id="in_put4" placeholder="Informe nome"> <br>
+    <button onclick="verificar()">Valendo!</button> <br>
+    <div id="msg"></div>
+
+</body>
+</html>
+<script>
+    
+    function verificar(){
+        var sorte1 = Number(in_put.value);
+        var sorte2 = Number(in_put2.value);
+        var sorte3 = Number(in_put3.value);
+        var nome = in_put4.value;
+        var numero = parseInt(Math.random() * sorte1 + 1 );
+        var numero = parseInt(Math.random() * sorte2 + 1 );
+        var numero = parseInt(Math.random() * sorte3 + 1 );
+      if(sorte1 <1 && sorte1 >10 ||sorte2 <1 && sorte2 >10 || sorte3<1 && sorte3>10){
+        alert("Esse número deve ser entre 1 e 10")
+      }else{
+
+      }
+        for (var contador =0; numero !== sorte1;contador++){
+            numero = parseInt(Math.random() * sorte1 + 1)
+            
+        }
+        msg.innerHTML = `Parabéns ${nome} você foi sorteado(a) Foram necessários ${contador} sorteios`
+        for (var contador =0; numero !== sorte2;contador++){
+            numero = parseInt(Math.random() * sorte2 + 1)
+        }
+        msg.innerHTML = `Parabéns ${nome} você foi sorteado(a) Foram necessários ${contador} sorteios`
+        for (var contador =0; numero !== sorte3;contador++){
+            numero = parseInt(Math.random() * sorte3 + 1)
+        }
+        msg.innerHTML = `Parabéns ${nome} você foi sorteado(a) Foram necessários ${contador} sorteios`
+
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Verificar temperatura</h2>
+    <button onclick="clique()">Sortear temperatura</button> <br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function clique (){
+        var temperatura =  parseInt(Math.random() * 20);
+
+        if(temperatura < 1){
+            msg.innerHTML = `Temperatura de ${temperatura}° Dá pra conservar qualquer alimento`
+        }
+        else if (temperatura >=1 && temperatura < 10){
+            msg.innerHTML = `Temperatura de ${temperatura}° Conserva a maioria dos alimentos`
+        }else {
+            msg.innerHTML = `Temperatura de ${temperatura}° Estraga a maioria dos alimentos`
+        }
+    }
+</script>

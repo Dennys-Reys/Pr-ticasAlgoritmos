@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>O número é par ou impar</h2>
+    <button onclick="sortear()">Sortear número</button> <br>
+    <div id="msg"></div>
+    <div id="msg2"></div>
+</body>
+</html>
+<script>
+    var numero = parseInt(Math.random());
+    function sortear(){
+ 
+        msg.innerHTML = `Números pares:  <br>
+    Números ímpares: `
+    }
+    if(numero % 2 == 0){
+        msg2.innerHTML += `Números pares: ${numero}  <br>
+    Números ímpares: `
+    }else  {
+        msg2.innerHTML += `Números pares:  <br>
+    Números ímpares:${numero} `
+
+    }
+</script>

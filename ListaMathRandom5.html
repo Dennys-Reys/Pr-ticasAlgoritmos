@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Jo ken Po</h2> <br>
+<button onclick="jogar()">Jogar</button> <br>
+<div id="msg"></div>
+    
+</body>
+</html>
+<script>
+    function jogar(){
+        var tipo = parseInt(1 + Math.random() * 3);
+        msg.innerHTML = `${tipo}`
+
+        
+        if(tipo == 1 ){
+            msg.innerHTML = `<img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/pedra-reverse.jpg" height="200px">`
+        }else if(tipo ==2 ){
+            msg.innerHTML = `<img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/tesoura-reverse.jpg" height="200px">`
+        }else if(tipo ==3 ){
+            msg.innerHTML = `<img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/papel-reverse.jpg" height="200px">`
+        }
+    }
+</script>

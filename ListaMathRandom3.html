@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dados Mania</h1>
+    <button onclick="jogar()">Jogar dados</button> <br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function jogar(){
+        var dado = parseInt(1 + Math.random() * 6);
+        msg.innerHTML = `${dado}`
+
+        
+        if(dado == 1 ){
+            msg.innerHTML = `<img src="https://dado.online/dado1.png" height="150px">`
+        }else if(dado ==2 ){
+            msg.innerHTML = `<img src="https://dado.online/dado2.png" height="150px">`
+        }else if(dado ==3 ){
+            msg.innerHTML = `<img src="https://dado.online/dado3.png" height="150px">`
+        }else if(dado ==4){
+            msg.innerHTML = `<img src="https://dado.online/dado4.png" height="150px">`
+        }else if(dado ==5){
+            msg.innerHTML = `<img src="https://dado.online/dado5.png" height="150px">`
+        }else if(dado ==6){
+            msg.innerHTML = `<img src="https://dado.online/dado6.png" height="150px">`
+        }
+
+    }
+</script>

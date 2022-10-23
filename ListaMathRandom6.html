@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Momento do dia</h1>
+    <button onclick="ver()">Sortear momento do dia</button> <br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function ver(){
+        var dia = parseInt( Math.random() * 23);
+        msg.innerHTML = `${dia}`
+
+        
+        if(dia >=0 && dia <= 11 ){
+            msg.innerHTML = `Bom dia, flor do dia, são ${dia}!`
+        }else if(dia >11 && dia <= 17 ){
+            msg.innerHTML = `Boa tarde, já vai tarde!, são ${dia}!`
+        }else if(dia >18 && dia <= 23 ){
+            msg.innerHTML = `Boa noite, durma bem!, são ${dia}!`
+        }
+
+    }
+</script>

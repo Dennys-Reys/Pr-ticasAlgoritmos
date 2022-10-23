@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Jo ken Po</h2>
+    <br />
+    <button onclick="jogar()">Jogar</button> <br />
+    Jogador 1:
+    <div id="msg"></div>
+    jogador 2:
+    <div id="msg1"></div>
+    <div id="msg2"></div>
+  </body>
+</html>
+<script>
+  var tipo = parseInt(1 + Math.random() * 3);
+  var tipo1 = parseInt(1 + Math.random() * 3);
+
+  function jogar() {
+    msg.innerHTML = `${tipo}`;
+    msg1.innerHTML = `${tipo1}`;
+    msg2.innerHTML = "";
+    if (tipo == 1) {
+      msg.innerHTML = `<img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/pedra-reverse.jpg" height="200px">`;
+    } else if (tipo == 2) {
+      msg.innerHTML = `<img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/tesoura-reverse.jpg" height="200px">`;
+    } else if (tipo == 3) {
+      msg.innerHTML = `<img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/papel-reverse.jpg" height="200px">`;
+    }
+    if (tipo1 == 1) {
+      msg1.innerHTML = `<img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/pedra-reverse.jpg" height="200px">`;
+    } else if (tipo1 == 2) {
+      msg1.innerHTML = `<img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/tesoura-reverse.jpg" height="200px">`;
+    } else if (tipo1 == 3) {
+      msg1.innerHTML = `<img src="https://genialcursos.com.br/jogo/pedra-papel-tesoura/img/papel-reverse.jpg" height="200px">`;
+    }
+    if (tipo == 1 && tipo1 == 2) {
+      msg2.innerHTML += "Jogador 1 venceu! porque pedra quebra tesoura";
+    } else if (tipo == 2 && tipo1 == 3) {
+      msg2.innerHTML += "Jogador 1 venceu! porque tesoura corta papel";
+    } else if (tipo == 3 && tipo1 == 1) {
+      msg2.innerHTML += "Jogador 1 venceu! porque papel cobre pedra";
+    } else if (tipo1 == 1 && tipo == 2) {
+      msg2.innerHTML += "Jogador 2 venceu! porque pedra quebra tesoura";
+    } else if (tipo1 == 2 && tipo == 3) {
+      msg2.innerHTML += "Jogador 2 venceu! porque tesoura corta papel";
+    } else if (tipo == 3 && tipo1 == 1) {
+      msg2.innerHTML += "Jogador 2 venceu! porque tesoura corta papel";
+    } else if (tipo == tipo1) {
+      msg2.innerHTML += "Empate ! Jogue novamente";
+    }
+  }
+</script>

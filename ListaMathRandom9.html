@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Nota aluno</h2>
+    Clique para sortear sua nota: <br />
+    <button onclick="clique()">Sortear Nota para aluno</button>
+    <div id="msg"></div>
+    Clique para sortear sua frequência: <br />
+    <button onclick="clique2()">Sortear frequência para aluno</button> <br />
+    <div id="msg2"></div>
+    <br />
+    <button onclick="situacao()">Aprovado?</button> <br />
+    <div id="msg3"></div>
+  </body>
+</html>
+<script>
+  var nota = parseInt(3 + Math.random() * 10);
+  var frequencia = parseInt(50 + Math.random() * 100);
+  function clique() {
+    msg.innerHTML = `${nota} <br>`;
+  }
+  function clique2() {
+    msg2.innerHTML = `${frequencia} <br>`;
+  }
+  function situacao() {
+    if (nota > 5 && frequencia < 70) {
+      msg3.innerHTML = `Parabéns você está Aprovado`;
+    } else {
+      msg3.innerHTML = `Que chato! você está reprovado`;
+    }
+  }
+</script>

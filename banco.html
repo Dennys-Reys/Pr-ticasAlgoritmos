@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>Banco SPtech</h2>
+Quantos depósitos foram feitos? <br>
+<input type="text" id="in_put" placeholder="Quantos depósitos"><br>
+Qual o valor do depósito? <br>
+<input type="text" id="in_put2" placeholder="Valor do depósito"><br>
+<button onclick="verificar()">Acompanhar grana</button> <br>
+<div id="msg"></div>
+</body>
+</html>
+<script>
+    msg.innerHTML='';
+    function verificar(){
+        var qnt =Number(in_put.value);
+        var valor= Number(in_put2.value);
+        var deposito = valor;
+        var contador = 1;
+        
+        
+        
+        
+        if(contador == 1){
+            msg.innerHTML += `${contador}º Mês: R$ ${valor}  <br>`
+        }
+        for(contador=2;contador <= qnt ;contador++){
+            
+            msg.innerHTML += `${contador}º Mês: R$ ${valor += deposito}  <br>`
+        }
+
+    
+    }
+</script>

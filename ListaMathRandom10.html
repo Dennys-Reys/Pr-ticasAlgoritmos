@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Dados Mania</h1>
+    <button onclick="jogador1()">Jogador 1 jogar dadinho</button> <br />
+    <div id="msg"></div>
+    <button onclick="jogador2()">Jogador 2 jogar dadinho</button> <br />
+    <div id="msg2"></div>
+  </body>
+</html>
+<script>
+   var dado1 = parseInt(1 + Math.random() * 6);
+  var dado2 = parseInt(1 + Math.random() * 6);
+  function jogador1() {
+    
+   
+    if (dado1 == 1) {
+      msg.innerHTML = `<img src="https://dado.online/dado1.png" height="150px">`;
+    } else if (dado1 == 2) {
+      msg.innerHTML = `<img src="https://dado.online/dado2.png" height="150px">`;
+    } else if (dado1 == 3) {
+      msg.innerHTML = `<img src="https://dado.online/dado3.png" height="150px">`;
+    } else if (dado1 == 4) {
+      msg.innerHTML = `<img src="https://dado.online/dado4.png" height="150px">`;
+    } else if (dado1 == 5) {
+      msg.innerHTML = `<img src="https://dado.online/dado5.png" height="150px">`;
+    } else if (dado1 == 6) {
+      msg.innerHTML = `<img src="https://dado.online/dado6.png" height="150px">`;
+    }
+  }
+  function jogador2() {
+    
+    
+ if (dado2 == 1) {
+      msg2.innerHTML = `<img src="https://dado.online/dado1.png" height="150px">`;
+    } else if (dado2 == 2) {
+      msg2.innerHTML = `<img src="https://dado.online/dado2.png" height="150px">`;
+    } else if (dado2 == 3) {
+      msg2.innerHTML = `<img src="https://dado.online/dado3.png" height="150px">`;
+    } else if (dado2 == 4) {
+      msg2.innerHTML = `<img src="https://dado.online/dado4.png" height="150px">`;
+    } else if (dado2 == 5) {
+      msg2.innerHTML = `<img src="https://dado.online/dado5.png" height="150px">`;
+    } else if (dado2 == 6) {
+      msg2.innerHTML = `<img src="https://dado.online/dado6.png" height="150px">`;
+    }if(dado1 > dado2){
+        msg2.innerHTML +=`<br> Jogador 1 venceu!`
+    }else if(dado1 < dado2){
+        msg2.innerHTML +=`<br> Jogador 2 venceu!`
+    }else if (dado1 == dado2){
+        msg2.innerHTML +=`<br> Empate`
+    }
+  }
+
+</script>

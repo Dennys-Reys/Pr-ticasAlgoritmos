@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>fases da lua</h1>
+    <button onclick="ver()">Ver a Lua</button><br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function ver(){
+        var fase = parseInt(Math.random() *31);
+
+        if(fase >= 1 &&  fase <=7){
+            msg.innerHTML = `Lua nova <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Dark_moon_emoji_icon_png_200x200.png" alt="" height="200px">`
+        }
+        else if(fase >=8 && fase <= 16){
+            msg.innerHTML = `Lua cheia <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Full_moon_emoji_icon_png_200x200.png" alt="" height="200px">`
+        }
+        else if(fase >=17 && fase <= 22){
+            msg.innerHTML = `Lua Minguante <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/First_quarter_moon_emoji_icon_png_200x200.png" alt="" height="200px">`
+        }
+        else if(fase >=23 && fase <= 31){
+            msg.innerHTML = `Lua crescente <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Waning_crescent_moon_emoji_icon_png_200x200.png" alt="" height="200px">`
+        }
+        }
+</script>
