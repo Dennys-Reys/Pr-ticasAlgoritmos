@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>Cadastro frutas</h2>
+<input type="text" id="in_put" placeholder="Qual a fruta?"> <br>
+<button onclick="cadastrar()"> Pesquisar
+</button>
+
+<div id="div_pesquisa" class="pesquisa"></div>
+</body>
+</html>
+<script>
+    var frutas = ["Manga", "Banana", "Maçã", "Pêra"]
+
+function cadastrar(){
+var pesquisa = in_put.value
+var resultado = frutas.indexOf(in_put.value)
+
+if (resultado < 0){
+    frase = `Não existe a fruta ${pesquisa} na lista`
+    
+}
+else{
+    frase = `A fruta ${pesquisa} existe na lista`
+}
+div_pesquisa.innerHTML = frase
+    }
+    
+</script>

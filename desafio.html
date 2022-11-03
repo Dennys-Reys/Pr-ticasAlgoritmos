@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    Qual sobremesa você comeu? <br>
+    <input id="in_sobremesas" placeholder="Sobremesa">
+    <br>
+    Pesquisa : <br>
+    <input id="in_pesquisa" placeholder="Pesquisa" onkeyup="pesquisar()"> <br>
+    <button onclick="cadastrar()">Cadastrar</button> 
+    <br>
+    <button onclick="mostrar()">
+        Mostrar todas
+    </button> <br>
+    <button onclick="inverter()">
+        Mostrar invertido
+    </button> <br>
+    <button onclick="colorir()">
+        Mostrar colorido se for impar:
+    </button> <br>
+    <div id="div_sobremesas"></div>
+</body>
+</html>
+<script>
+    var sobremesas = []
+
+    function cadastrar (){
+        sobremesas.push(in_sobremesas.value)
+    }
+    function mostrar (){
+        div_sobremesas.innerHTML = ""
+
+        for (var indice = 0; indice < sobremesas.length; indice++){
+            var atual = sobremesas[indice]
+
+            div_sobremesas.innerHTML += `${indice +1}-${atual} <br>`
+        }
+    }
+    function inverter(){
+        div_sobremesas.innerHTML = ""
+
+for (var indice = sobremesas.length-1; indice >= 0; indice--){
+    var atual = sobremesas[indice]
+
+    div_sobremesas.innerHTML += `${indice +1}-${atual} <br>`
+}
+
+    }
+    function colorir (){
+        div_sobremesas.innerHTML = ""
+
+        for (var indice = 0; indice < sobremesas.length; indice++){
+            var atual = sobremesas[indice]
+            var cor = 'black'
+
+            if(indice % 2 == 0){
+                cor = 'blue'
+            }
+            
+                div_sobremesas.innerHTML +=  `<span style="color:${cor}"> ${indice +1}-${atual} </span> <br>`
+            
+        }
+    }
+    function pesquisar(){
+        var vezes = 0
+
+        for (var indice = 0; indice < sobremesas.length; indice++){
+
+            var atual = sobremesas[indice]
+            if(atual == in_pesquisa.value){
+                vezes++
+            } 
+        }
+        var resultado 
+if (vezes > 0){
+    resultado =  `Voce comeu ${in_pesquisa.value} ${vezes} vez(es)`
+}
+else{
+    resultado = `Voce não comeu ${in_pesquisa.value} ainda`
+}
+div_sobremesas.innerHTML = resultado
+
+    
+}
+</script>
