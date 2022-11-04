@@ -18,11 +18,11 @@
   function sortear() {
     var numeroS = Number(in_put.value);
 
-    contador = 0;
-    while (contador < 20) {
-      var numero = parseInt(Math.random() * 100);
-      contador++;
+    
+    for (contador = 0;contador < 20;contador++){
 
+      var numero = parseInt(Math.random() * 100);
+      
       if (numero == numeroS) {
         msg.innerHTML = `Muito bem, você é uma pessoa de sorte! <br>
         Seu número saiu no ${contador}º sorteio

@@ -7,9 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-<h2>Cadastro frutas</h2>
+<h2>Cadastrar filme</h2>
 <input type="text" id="in_put" placeholder="Qual a fruta"> <br>
-<button onclick="cadastrar()">cadastrar
+<button onclick="cadastrar()">
+    cadastrar
 </button>
 <div>
     Total de frutas: <b id="b_total">0</b> <br>
@@ -34,16 +35,3 @@ onkeyup="pesquisar()">
         b_quarta.innerHTML = frutas[3]
         u_quarta.innerHTML = frutas[frutas.length-1]
     }
-    function pesquisar(){
-        var pesquisa = in_pesquisa.value
-        var resultado = frutas.indexOf(in_pesquisa.value)
-if (resultado < 0){
-    frase = 'Não existe'
-}
-else{
-    frase = `Esta na posição ${resultado}`
-}
-div_pesquisa.innerHTML = frase
-    }
-    
-</script>

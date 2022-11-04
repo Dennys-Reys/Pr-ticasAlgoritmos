@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="sortear()">Ver minha sorte</button>
+    <br><br>
+    <div id="image"></div>
+    <br><br>
+    <div id="msg"></div>
+</body>
+
+</html>
+
+<script>
+    function sortear() {
+        image.innerHTML = '';
+        msg.innerHTML = '';
+
+        var amor = 0;
+        var carta = 0;
+        
+        for (contador = 0; contador < 21; contador++) {
+            var numero = parseInt(1 + Math.random() * 2);
+            var ganhador = amor == 11 || carta == 11;
+
+            if(!ganhador) {
+                if (numero == 1) {
+                    image.innerHTML += '<img src="https://images.vexels.com/media/users/3/189299/isolated/preview/35bdc522366f66f364796411f595fec1-ilustracao-de-cartas-de-poquer-quatro-ases.png" height="200px">'
+                    carta++
+                } else {
+                    image.innerHTML += '<img src ="http://cdn5.colorir.com/desenhos/color/201101/d314d6286f9ec975e729e21e73c57ecb.png" height="200px">'
+                    amor++
+                }
+            } else {
+                break
+            }
+         
+        }
+        if (amor == 11) {
+            msg.innerHTML += 'Você tem mais sorte no amor'
+        } else {
+            msg.innerHTML += 'Você tem mais sorte no jogo'
+        }
+
+      
+    }
+        
+</script>

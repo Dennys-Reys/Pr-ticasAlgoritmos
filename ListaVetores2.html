@@ -7,6 +7,58 @@
     <title>Document</title>
 </head>
 <body>
-    
+    informe o destino de viajem: <br>
+    <input type="text" id="in_put" placeholder="Destino">
+    <button onclick="adicionar()">
+        Adicionar destino
+    </button> <br>
+    <button onclick="adicionar1()">
+        Primeira viagem
+    </button> <br>
+    <button onclick="adicionar2()">
+        Terceira viagem
+    </button> <br>
+    <button onclick="adicionar3()">
+        Última viagem
+    </button> <br>
+    <div id="div_msg"></div>
+
 </body>
 </html>
+<script>
+    var viagem =[];
+    function adicionar(){
+        var frase 
+ in_put.value = ""
+
+ viagem.push(in_put.value)
+        }
+    
+    function adicionar1(){
+        var frase 
+        for (var indice = 0; indice < viajem.length; indice++ ){
+            var atual = viajem[indice]
+            if (atual < 0){
+                frase = `ainda não viajou`
+            }
+        }
+    }
+    function adicionar2(){
+        var frase 
+        for (var indice = 0; indice < viajem.length; indice++ ){
+            var atual = viajem[indice]
+            if (atual < 0){
+                frase = `ainda não viajou`
+            }
+        }
+    }
+    function adicionar3(){
+        var frase 
+        for (var indice = 0; indice < viajem.length; indice++ ){
+            var atual = viajem[indice]
+            if (atual < 0){
+                frase = `ainda não viajou`
+            }
+        }
+    }
+</script>

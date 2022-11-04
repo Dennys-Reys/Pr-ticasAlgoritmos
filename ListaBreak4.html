@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Marvel vs DC</H1>
+    Selecione filme de preferência: <br>
+<select name="" id="sel_ect">
+    <option value="1">Marvel</option>
+    <option value="2">DC</option>
+</select>
+<br>
+<button onclick="ver()">Ver programação semanal</button> <br>
+<div id="msg"></div>
+    
+</body>
+</html>
+<script>
+    msg.innerHTML = ""
+    function ver(){
+        
+        
+        var preferencia = sel_ect.value;
+        
+        for (contador = 1; contador < 5; contador++) {
+            
+            var numero = parseInt( Math.random() * 5);
+            if(numero == preferencia){
+                msg.innerHTML = `Você verá um filme que gosta no ${contador}º dia`
+                break;
+            }else{
+                
+                
+                msg.innerHTML =  `É, ou lê um livro ou assiste um filme que não gosta mesmo`
+            }
+
+        }
+    }
+</script>
