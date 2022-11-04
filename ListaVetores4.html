@@ -15,10 +15,23 @@
     <button onclick="ver()">
     Ver favoritos
    </button> <br>
+   <div id="msg"></div>
 </body>
 </html>
 <script>
+    var filmes =[]
     function cadastrar(){
-        
+        filmes.push(in_put.value)
+        in_put.value = ''
+    }
+    function ver(){
+        for (var indice = 0; indice < filmes.length; indice++){
+            var atual = filmes[indice]
+
+            msg.innerHTML = ` O que eu mais gosto é ${filmes[0]} <br>`
+            msg.innerHTML += ` O que eu menos gosto é ${filmes[filmes.length-1]} <br>`
+        }
+        msg.innerHTML += ` Total: ${filmes.length}`
+
     }
 </script>

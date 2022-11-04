@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+    <input placeholder="Cadastro" id="inp_nome" type="text">
+    <button onclick="cadastrar()">
+        Cadastrar
+    </button>
+    <button onclick="exibir()">
+        Exibir lista de contatos
+    </button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+    
+        var nome = []
+
+        
+        }
+    function cadastrar(){
+        var contato ={
+            nome : inp_nome.value,
+            telefone: inp_telefone.value,
+    
+        }
+        contato.push(contato)
+    }
+    function exibir(){
+        div_msg.innerHTML+= `Nome `
+    }
+</script>

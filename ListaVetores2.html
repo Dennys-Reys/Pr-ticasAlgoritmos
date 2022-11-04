@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     informe o destino de viajem: <br>
     <input type="text" id="in_put" placeholder="Destino">
@@ -24,41 +26,35 @@
     <div id="div_msg"></div>
 
 </body>
+
 </html>
 <script>
-    var viagem =[];
-    function adicionar(){
-        var frase 
- in_put.value = ""
+    var viagem = [];
+    function adicionar() {
+        viagem.push(in_put.value)
+        in_put.value =''
+    }
 
- viagem.push(in_put.value)
-        }
-    
-    function adicionar1(){
-        var frase 
-        for (var indice = 0; indice < viajem.length; indice++ ){
-            var atual = viajem[indice]
-            if (atual < 0){
-                frase = `ainda não viajou`
-            }
+    function adicionar1() {
+        if (viagem[0] == undefined) {
+            div_msg.innerHTML = `Não viajou ainda`
+        } else {
+            div_msg.innerHTML = `Primeira Viagem ${viagem[0]}`
         }
     }
-    function adicionar2(){
-        var frase 
-        for (var indice = 0; indice < viajem.length; indice++ ){
-            var atual = viajem[indice]
-            if (atual < 0){
-                frase = `ainda não viajou`
-            }
+
+    function adicionar2()  {
+        if (viagem[2] == undefined) {
+            div_msg.innerHTML = `Não viajou ainda`
+        } else {
+            div_msg.innerHTML = `terceira viagem ${viagem[2]}`
         }
     }
-    function adicionar3(){
-        var frase 
-        for (var indice = 0; indice < viajem.length; indice++ ){
-            var atual = viajem[indice]
-            if (atual < 0){
-                frase = `ainda não viajou`
-            }
+    function adicionar3() {
+        if (viagem[viagem.length-1] == undefined) {
+            div_msg.innerHTML = `Não viajou ainda`
+        } else {
+            div_msg.innerHTML = `Ultima viagem ${viagem[viagem.length-1]}`
         }
     }
 </script>

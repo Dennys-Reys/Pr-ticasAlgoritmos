@@ -26,20 +26,12 @@
         filmes.push(in_put.value)
         var terceiroFilme = 'Ainda não existe'
         in_put.value = ""
-        
-        if(filmes.length >=3){
-            
-            terceiroFilme = filmes[2]
+     
+        for (var indice = 0; indice < filmes.length; indice++){
+            var atual = filmes[indice]
+
+            div_sobremesas.innerHTML += `${indice +1}-${atual} <br>`
         }
-        
-        div_resultado.innerHTML = `
-                                Seu filme favorito: ${filmes[0]}<br>
-
-                                Seu 3º filme favorito: ${terceiroFilme}<br>
-
-                                Total de filmes cadastrados: ${filmes.length}<br>
-
-                                `   
           
     }
     </script>
