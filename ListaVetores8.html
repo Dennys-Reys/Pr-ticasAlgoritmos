@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-<h2>Cadastrar filme</h2>
-<input type="text" id="in_put" placeholder="Qual filme"> <br>
+<h2>Cadastrar Alunos</h2>
+<input type="text" id="in_put" placeholder="Nome aluno"> <br>
 <button onclick="cadastrar()">
-    cadastrar
+    cadastrar alunos
 </button>
 <div id="div_resultado">
 
@@ -20,16 +20,16 @@
 </body>
 </html>
 <script>
-    var filmes = []
+    var alunos = []
 
     function cadastrar(){
-        filmes.push(in_put.value)
-        var terceiroFilme = 'Ainda não existe'
+        alunos.push(in_put.value)
         in_put.value = ""
      
-        for (var indice = 0; indice < filmes.length; indice++){
-            var atual = filmes[indice]
+        for (var indice = alunos; indice >= alunos.length; indice--){
+            var atual = alunos[indice]
 
+            
         }
         div_resultado.innerHTML += `${indice}- ${atual} <br>`
           

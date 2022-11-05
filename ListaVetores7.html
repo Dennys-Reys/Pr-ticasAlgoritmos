@@ -13,6 +13,7 @@
     cadastrar
 </button>
 <div id="div_resultado">
+    
 
 </div> <br>
 
@@ -24,14 +25,19 @@
 
     function cadastrar(){
         filmes.push(in_put.value)
-        var terceiroFilme = 'Ainda não existe'
         in_put.value = ""
      
         for (var indice = 0; indice < filmes.length; indice++){
             var atual = filmes[indice]
+            if (atual % 2 !== 0){
+    
+                div_resultado.innerHTML += `<p style="color:red;" ${indice}- ${atual} </p><br>`
+            }
+            else{
+                div_resultado.innerHTML += `<p style="color:blue;" ${indice}- ${atual} </p><br>`
+            }
 
         }
-        div_resultado.innerHTML += `${indice}- ${atual} <br>`
           
     }
     </script>
