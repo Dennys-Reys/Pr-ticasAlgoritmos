@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Quantos projetos você ja criou: <br />
+    <input type="text" id="in_put" placeholder="Quantos Projetos" /> <br />
+    <br />
+    <button onclick="registra()">Registrar projeto</button> <br />
+    <button onclick="mostrar()">Mostrar projetos</button>
+    <div id="msg"></div>
+  </body>
+</html>
+<script>
+  var projeto = [];
+  var qntProjeto = 0;
+
+  function registra() {
+    projeto.push(in_put.value)
+    qntProjeto++;
+    in_put.value = ""
+    
+
+    if (qntProjeto >= 0 && qntProjeto <= 4) {
+        msg.innerHTML = `Você já fez ${qntProjeto} projetos. Por isso você é um profissional Junior`;
+      }
+      else if (qntProjeto > 4 && qntProjeto <= 12) {
+        msg.innerHTML = `Pleno. Desde o projeto ${projeto[4]}`;
+      } else {
+        msg.innerHTML = `Senior desde o projeto ${projeto[12]}`;
+      }
+      
+      
+  }
+  
+  function mostrar() {
+    msg.innerHTML = " "
+    for (var i = projeto.length; i > 0; i--) {
+        
+        msg.innerHTML += `projeto numero: " ${i} ${projeto[i -1]}  <br>`
+    }
+    
+  }
+</script>

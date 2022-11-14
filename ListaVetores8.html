@@ -23,15 +23,17 @@
     var alunos = []
 
     function cadastrar(){
+        div_resultado.innerHTML=""
+
         alunos.push(in_put.value)
         in_put.value = ""
      
-        for (var indice = alunos; indice >= alunos.length; indice--){
-            var atual = alunos[indice]
+        for (var indice = alunos.length; indice > 0; indice--){
+            var atual = alunos[indice -1]
 
             
+            div_resultado.innerHTML += `${indice}- ${atual} <br>`
         }
-        div_resultado.innerHTML += `${indice}- ${atual} <br>`
           
     }
     </script>

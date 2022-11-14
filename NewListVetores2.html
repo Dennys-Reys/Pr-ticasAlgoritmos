@@ -15,6 +15,45 @@
     <button onclick="atualizar()">
         Atualizar familia
     </button> <br>
+    <div id="msg"></div>
     
 </body>
 </html>
+ <script>
+    var nome = [];
+    
+    function cadastrar(){
+     var filho = (in_put.value)
+        nome.push(filho)
+        
+        
+
+        for (var i = 0; i < nome.length; i++) {
+            nome[i]
+            var nomenaLista = nome[i]
+
+            if(nomenaLista == filho){
+                alert("Não pode mais de 1 filho com o mesmo nome!")
+            }
+
+        }
+
+
+    }
+    
+    function atualizar(){
+        var particular = nome.length * 3000;
+        var publica = (nome.length * 1500);
+
+        for (var i = 0; i < nome.length; i++) {
+            nome[i]
+            contadorFilhos++;
+        }
+
+        msg.innerHTML=` Você tem ${nome.length} filhos <br>
+        
+        Seu custo mensal será aproximadamente R$${particular.toFixed(2)} se você colocar
+        seus filhos em uma escola pública gastará somente R$${publica.toFixed(2)}`
+
+    }
+ </script>

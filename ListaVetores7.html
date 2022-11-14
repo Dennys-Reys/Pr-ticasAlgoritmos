@@ -24,17 +24,19 @@
     var filmes = []
 
     function cadastrar(){
+        div_resultado.innerHTML = ""
         filmes.push(in_put.value)
         in_put.value = ""
      
         for (var indice = 0; indice < filmes.length; indice++){
             var atual = filmes[indice]
-            if (atual % 2 !== 0){
-    
-                div_resultado.innerHTML += `<p style="color:red;" ${indice}- ${atual} </p><br>`
+            if (indice % 2 !== 0){
+    console.log("entrou no if")
+                div_resultado.innerHTML += `<p style="color:red;"> ${indice +1 }- ${atual} </p><br>`
             }
             else{
-                div_resultado.innerHTML += `<p style="color:blue;" ${indice}- ${atual} </p><br>`
+                div_resultado.innerHTML += `<p style="color:blue;"> ${indice +1 }- ${atual} </p><br>`
+                    console.log("entrou no else")
             }
 
         }

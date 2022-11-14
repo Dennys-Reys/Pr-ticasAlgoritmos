@@ -25,29 +25,30 @@
 </html>
 <script>
     var preco = [];
-
-
+    var soma = 0
     function cadastrar() {
-        preco.push(in_preco.value)
+        var cadastro =Number(in_preco.value)
+        preco.push(cadastro)
+        
         in_preco.value = ""
-
     }
     function atualizar() {
-        msg.innerHTML = ''
+       
 
-        for (var i = preco.length; i > 0; i--) {
-            var total = preco[i];
+        for (var i = 1; i < preco.length ; i++) {
+             soma += preco[i]
 
-            var estoque = 0;
-            estoque++;
+             
+            
 
-            estoque = estoque + preco
+            
+             msg.innerHTML = `Você tem ${preco.length} produtos cadastrados em estoque <br>
+             
+             Seu estoque vale R$${soma} `
 
         }
 
 
 
-        msg.innerHTML = `Você tem ${preco.length} produtos cadastrados em estoque <br>
-                        Seu estoque vale R$${estoque} `
     }
 </script>

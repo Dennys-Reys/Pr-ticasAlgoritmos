@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Quais linhas de ônibus você pegou essa semana? <br />
+    <input type="text" id="in_put" />
+    <button onclick="gravar()">Gravar busão</button> <br />
+    <input type="text" id="in_put2" />
+    <button onclick="pesquisar()">Pesquisar linha</button> <br />
+    <div id="msg"></div>
+  </body>
+</html>
+<script>
+  var linhas = [];
+
+  function gravar() {
+    msg.innerHTML = "";
+
+    linhas.push(in_put.value);
+    in_put.value = "";
+
+    for (var i = linhas.length; i > 0; i--) {
+      var atual = linhas[i - 1];
+
+      msg.innerHTML += ` ${i} ${atual} <br> `;
+    }
+  }
+
+  function pesquisar() {
+    msg.innerHTML = "";
+    var pesquisa = in_put2.value;
+
+    var posicao = [];
+    var contadorPosicao = 0;
+
+    for (var indice = 0; indice < linhas.length; indice++) {
+      if (pesquisa == linhas[indice]) {
+        posicao[contadorPosicao] = indice;
+        contadorPosicao++;
+      }
+    }
+    if (posicao.length > 0) {
+      msg.innerHTML = `Você já pegou essa linha ${posicao.length} vezes, nessa ordem: `;
+
+      for (var i = 0; i < posicao.length; i++) {
+        msg.innerHTML += `${posicao[i]}, `;
+      }
+    } else {
+      msg.innerHTML = `Você nunca pegou essa linha`;
+    }
+  }
+</script>

@@ -27,16 +27,18 @@
     function cadastrar(){
         bairro.push(in_put.value)
         in_put.value= ''
-        var moradia = in_put.value
     }
     function relembrar(){
+        var moradia = in_put2.value
         var pesquisa=Number(in_put2.value)
         
           
-if(bairro[bairro.length] > pesquisa){
-    msg.innerHTML = `Você não morou no bairro ${moradia} ainda`
+if(bairro.length >= pesquisa){
+    var posicao = pesquisa - 1
+
+    msg.innerHTML = `${bairro[posicao]} foi o seu ${pesquisa}º bairro`
 } else {
-    msg.innerHTML = `${moradia} foi o seu ${bairro[bairro.length]}º bairro`
+    msg.innerHTML = `Você não morou no bairro ${pesquisa} ainda`
 }
     }
 

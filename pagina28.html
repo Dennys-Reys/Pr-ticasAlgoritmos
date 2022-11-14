@@ -26,24 +26,26 @@ onkeyup="pesquisar()">
     var frutas = []
 
     function cadastrar(){
-        in_put.value = ""
+        
         frutas.push(in_put.value)
+        in_put.value = ""
 
         b_total.innerHTML = frutas.length 
-        b_segunda.innerHTML = frutas [1]
+        b_segunda.innerHTML = frutas[1]
         b_quarta.innerHTML = frutas[3]
-        u_quarta.innerHTML = frutas[frutas.length-1]
+        u_quarta.innerHTML = frutas[frutas.length -1]
     }
     function pesquisar(){
+        div_pesquisa.innerHTML = ""
         var pesquisa = in_pesquisa.value
-        var resultado = frutas.indexOf(in_pesquisa.value)
+        var resultado = frutas.indexOf(in_put.value)
 if (resultado < 0){
-    frase = 'Não existe'
+    div_pesquisa.innerHTML += 'Não existe'
 }
 else{
-    frase = `Esta na posição ${resultado}`
+    div_pesquisa.innerHTML += `Esta na posição ${resultado}`
 }
-div_pesquisa.innerHTML = frase
+
     }
     
 </script>

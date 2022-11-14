@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <H1>resultados da temporada</H1>
+     <select name="#" id="sel_ect">
+        <h3>Informe resultado final da partida</h3> <br>
+        <option value="">-Selecione-</option>
+        <option value="1">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="1">Derrota</option>
+     </select>
+     <button onclick="registrar()">Registrar jogo</button>
+     <div id="msg"></div>
+</body>
+</html>
+ <script>
+    var jogos = []
+    var contador = 0;
+    function registrar(){
+        var resultado = Number(sel_ect.value)
+        jogos.push(resultado)
+        contador++;
+        sel_ect.value = ''
+        for (var i = 0; i < jogos.length; i++) {
+                
+        }
+msg.innerHTML = `O time teve: ${contador} vitórias, ${contador} empates, ${contador} derrotas
+
+Pontuação total:  pontos
+
+Aproveitamento: Y%`
+    }
+ </script>

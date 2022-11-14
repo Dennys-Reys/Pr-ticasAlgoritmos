@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    favor informar o nome do produto: <br />
+    <input type="text" id="in_put" placeholder="produto" /> <br />
+    favor informar o preço do produto: <br />
+    <input type="text" id="in_put2" placeholder="preço" /> <br />
+    Informe o tipo do produto: <br>
+    <select name="selecao" id="sel_ect">
+        <option value="">selecione</option>
+        <option value="Gerais">Gerais</option>
+        <option value="Alimentos">Alimentos</option>
+        <option value="Eletrônicos">Eletronicos</option>
+    </select>
+    <br>
+    <button onclick="registrar()">Registrar produto</button> <br />
+    <button onclick="verificar()">Verificar produto</button> <br />
+    <div id="msg"></div>
+    Pesquisar por produto: <br>
+    <input type="text" id="in_pesq"> <br>
+    <button onclick="procurar()">Procurar</button>
+    <div id="div_filtro"></div>
+  </body>
+</html>
+<script>
+  var produto = [];
+
+  function registrar() {
+    msg.innerHTML = "";
+
+    var nome = in_put.value;
+    var tipo = sel_ect.value;
+    var preco = in_put2.value;
+
+    var produtos = {
+      nome,
+      tipo,
+      preco,
+    };
+    produto.push(produtos);
+    in_put.value = "";
+    in_put2.value = "";
+    sel_ect.value = "";
+
+    if (nome == "" ||tipo == ""||  preco == "" ) {
+      alert(
+        "Inválido! Verifique o preenchimento dos campos e tente novamente!"
+      );
+    }
+  }
+
+  function verificar() {
+    msg.innerHTML = "";
+
+    if (produto.length > 0) {
+      
+   
+      for (var contador = 0; contador < produto.length; contador++) {
+        var listaDeproduto = produto[contador];
+        msg.innerHTML += `Produto: ${listaDeproduto.nome} <br> Tipo:${listaDeproduto.tipo} <br> Preço R$: ${listaDeproduto.preco} <br><br>`;
+      }
+    }
+  }
+  function procurar(){
+    div_filtro.innerHTML =""
+
+    if(produto.length > 0){
+        var localiza = sel_ect.value;
+        var filtro = []
+
+        for(var indice = 0; indice < produto.length; indice++){
+            if(localiza == produto[indice].tipo){
+                filtro.push(produto[indice]);
+            }
+        }
+        if(filtro.length > 0){
+            div_filtro.innerHTML = `Produtos filtrados pelo tipo: ${localiza} <br>`
+
+            for(var indice = 0; indice < filtro.length; indice++){
+                div_filtro.innerHTML += `<br> Produto: ${filtro[indice].nome} <br>`
+            }
+        }
+        else{
+            alert("Não há nenhum produto deste tipo registrado!")
+        }
+        
+    }
+    else{
+        alert("Não há produtos registrados na lista!");
+    }
+
+  }
+
+</script>

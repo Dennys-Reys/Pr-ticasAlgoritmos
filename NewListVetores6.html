@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um numero : <br>
+    <input type="text" id="in_put">
+    <button onclick="verificar()">Analisar histórico</button>
+    Maior Nº: <b id="maior">0</b>
+    Menor Nº: <b id="menor">0</b>
+
+    <div id="msg"></div>
+
+</body>
+</html>
+<script>
+    var numero = []
+    var contar = 0
+    function verificar(){
+        numero.push(in_put.value)
+        contar++
+
+        var maximo = 0
+        var minimo = 50000000000
+
+        msg.innerHTML += `${contar}º numero: ${numero[numero.length - 1]} <br>`
+
+        for (var i = 0; i < numero.length; i++) {
+         if (numero[i] > maximo){
+            maior.innerHTML = maximo = numero[i]
+         }
+         else{
+            menor.innerHTML = minimo = numero[i]
+         }
+        }
+    }
+        
+    
+</script>
