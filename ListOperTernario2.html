@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão-2</title>
+</head>
+<body>
+    Olá! Favor informar sua idade: <br>
+    <input type="text" id="in_put">
+    <button onclick="verificar()">Verificar</button>
+    <div id="div_resultado" style="display: none">
+        Já passou pela infância: <b id="b_infancia"></b>
+        <br>
+        Já passou pela adolescência: <b id="b_adolescencia"></b>
+        <br>
+        Já é um idoso: <b id="b_idoso"></b>
+        <br>
+        TOTAL DE PONTOS: <b id="b_pontos"></b>
+    </div>
+</body>
+</html>
+<script>
+    function verificar(){
+        var idade = Number(in_put.value)
+        var infancia = idade > 0 ? true: false
+        var adolescencia = idade >12 ? true : false
+        var idoso = idade >= 65? true : false
+
+        var pontos = 0
+        pontos += infancia ? 10: 0
+        pontos += adolescencia ? 20: 0
+        pontos += idoso ? 50: 0
+
+        div_resultado.style.display = 'block'
+
+b_infancia.innerHTML = infancia
+b_adolescencia.innerHTML = adolescencia
+b_idoso.innerHTML = idoso
+b_pontos.innerHTML = pontos
+
+        
+
+    }
+</script>
