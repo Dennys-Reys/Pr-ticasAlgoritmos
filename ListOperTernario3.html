@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 3</title>
+</head>
+<body>
+    <h2>Mercado Bom doce</h2>
+    Favor informar a quantidade de chocolates: <br>
+    <input type="text" id="in_put">
+    <button onclick="comprar()">Comprar</button>
+    <div id="msg"></div>  
+</body>
+</html>
+<script>
+    function comprar(){
+        var chocolate = Number(in_put.value)
+        var promocao =(chocolate * 3)
+        var desconto =(chocolate * 2.50)
+
+        var total = chocolate > 12 || chocolate < 12 ? `O valor da sua compra foi R$${desconto}` : `O valor da sua compra foi R$ ${promocao}`
+
+        msg.innerHTML = total
+    }
+</script>

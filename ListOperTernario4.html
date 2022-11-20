@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quetão 4</title>
+</head>
+
+<body>
+    Favor informar a frequência do aluno: <br>
+    <input type="text" id="in_put">
+    <button onclick="analisar()">Analisar frequência</button> <br>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        var frequencia =Number(in_put.value)
+
+    
+    var freqAluno = frequencia < 50 ? `<img src="https://img2.gratispng.com/20180310/yhq/kisspng-world-teachers-day-clip-art-cartoon-glasses-teacher-s-day-poster-5aa431295132c4.3509884515207099293326.jpg" alt="aluno estudioso" height="150px">` : `<img src="https://1.bp.blogspot.com/-15rD4RtLczo/V9wLXA2b3YI/AAAAAAAABN4/yWDW04XG8oYzVEHHsQVW6WUOGwHjGGkBACLcB/s1600/wpa0911e5e_1a.png" alt="aluno turista" height="150px" >`
+    resultado.innerHTML = freqAluno
+    }
+</script>
